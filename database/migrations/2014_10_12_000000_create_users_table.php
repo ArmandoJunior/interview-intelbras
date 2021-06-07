@@ -13,10 +13,12 @@ class CreateUsersTable extends Migration
      */
     public function up()
     {
+        //Nome, e-mail, telefone e endereço de instalação e valor mensal da conta de energia.
         Schema::create('users', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
             $table->string('email')->unique();
+            $table->string('phone');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
